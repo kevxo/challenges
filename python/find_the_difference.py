@@ -1,3 +1,5 @@
+from collections import Counter
+
 s = "abcd"
 t = "abcde"
 
@@ -5,14 +7,13 @@ s2 = "a"
 t2 = "aa"
 
 def find_the_difference(s: str, t: str) -> str:
-  string1_chars = list(s)
-  string2_chars = list(t)
+  s_dict = Counter(s)
+  t_dict = Counter(t)
 
 
-  if len(string1_chars) != len(string2_chars):
-    difference = len(string1_chars) - len(string2_chars)
-
-    return "".join(string2_chars[difference:])
+  for char, value in t_dict.items():
+    if t_dict[char] > s_dict[char]:
+      return char
 
 
 
