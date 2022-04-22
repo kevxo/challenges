@@ -2,7 +2,7 @@ string = "Dermatoglyphics"
 string2 = "aba"
 string3 = "moOse"
 
-def is_isogram(string):
+def is_isogram(string: str) -> bool:
   list_string = list(string.lower())
 
   for char, count in char_dict(list_string).items():
@@ -12,7 +12,7 @@ def is_isogram(string):
   return True
 
 
-def char_dict(list_string):
+def char_dict(list_string: list) -> dict:
   char_dict = {}
 
   for char in list_string:
